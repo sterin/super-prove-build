@@ -1,0 +1,10 @@
+syntax: glob
+
+.idea/
+
+*.orig
+*.rej
+*~
+
+build/
+
