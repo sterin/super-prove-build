@@ -10,7 +10,7 @@ cmake = cmake
 
 [subpaths]
 
-^(.*)/subpaths/(abc-zz|_pyabc|pyaig|pyliveness|pyzz|pywrapper)$ = \1/\2
+^(.*)/subpaths/(abc\-zz|_pyabc|pyaig|pyliveness|pyzz|pywrapper)$ = \1/\2
 ^(.*)/sterin/super_prove_build/abc$ = \1/alanmi/abc
 ^(.*)/sterin/super_prove_build/super_prove$ = \1/rbrayton/pyabc
 ^(.*)/super_prove_build/cmake$ = \1/pyabc_cmake
