@@ -1,9 +1,16 @@
-abc = https://bitbucket.org/alanmi/abc
-abc-zz = https://bitbucket.org/sterin/abc-zz
-pyabc = https://bitbucket.org/sterin/_pyabc
-pyaig = https://bitbucket.org/sterin/pyaig
-pyliveness = https://bitbucket.org/sterin/pyliveness
-pyzz = https://bitbucket.org/sterin/pyzz
-pywrapper = https://bitbucket.org/sterin/pywrapper
-super_prove = https://bitbucket.org/rbrayton/pyabc
-cmake = https://bitbucket.org/sterin/pyabc_cmake
+abc = abc
+abc-zz = abc-zz
+pyabc = pyabc
+pyaig = pyaig
+pyliveness = pyliveness
+pyzz = pyzz
+pywrapper = pywrapper
+super_prove = super_prove
+cmake = cmake
+
+[subpaths]
+
+^(.*)/subpaths/(abc-zz|_pyabc|pyaig|pyliveness|pyzz|pywrapper)$ = \1/\2
+^(.*)/sterin/super_prove_build/abc$ = \1/alanmi/abc
+^(.*)/sterin/super_prove_build/super_prove$ = \1/rbrayton/pyabc
+^(.*)/super_prove_build/cmake$ = \1/pyabc_cmake
