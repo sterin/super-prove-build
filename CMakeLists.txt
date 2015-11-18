@@ -27,4 +27,4 @@ install(FILES super_prove/abc.rc DESTINATION lib/super_prove)
 file(GLOB sh_scripts "super_prove/*.sh")
 install(PROGRAMS ${sh_scripts} DESTINATION bin)
 
-pyabc_install_support_libraries(pyabc.exe)
+pyabc_install_support_libraries(pyabc.exe bip.exe)
