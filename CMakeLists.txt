@@ -4,10 +4,11 @@ project(super_prove)
 
 include(cmake/pyabc.cmake)
 
-set(ABC_USE_NAMESPACE pyabc)
-
 add_subdirectory(abc EXCLUDE_FROM_ALL)
+
+set(ZZ_USE_EXTERNAL_LIBABC TRUE)
 add_subdirectory(abc-zz EXCLUDE_FROM_ALL)
+
 add_subdirectory(pywrapper EXCLUDE_FROM_ALL)
 add_subdirectory(pyzz EXCLUDE_FROM_ALL)
 add_subdirectory(pyabc EXCLUDE_FROM_ALL)
