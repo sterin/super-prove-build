@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.3.0)
 
+include(CMakeToolsHelper OPTIONAL)
+
 project(super_prove)
 
 include(cmake/pyabc.cmake)
