@@ -1,3 +1,17 @@
 {
-    "cmake.installPrefix": "${workspaceRoot}/build/xxx"
+    "cmake.installPrefix": "${workspaceRoot}/build/xxx",
+    "files.associations": {
+        "*.ihh": "cpp",
+        "*.icc": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "functional": "cpp",
+        "istream": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "*.i": "cpp",
+        "hash_map": "cpp",
+        "hash_set": "cpp",
+        "initializer_list": "cpp"
+    }
 }

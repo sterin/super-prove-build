@@ -8,3 +8,8 @@ syntax: glob
 
 build/
 
+hwmcc15_live/
+aigs/
+
+.vscode/.cmaketools.json
+.vscode/tags
