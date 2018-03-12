@@ -1,0 +1,35 @@
+language: cpp
+
+matrix:
+  include:
+
+  - os: linux
+    addons:
+      apt:
+        packages:
+          - libreadline-dev
+          - zlib1g-dev
+          - python-dev
+          - python-setuptools
+          - ninja-build
+
+script:
+
+- mkdir build
+- cd build
+
+- cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
+- cmake --build .
+- cmake --build . --target package
+
+deploy:
+  provider: releases
+  api_key:
+    secure: S9zhzD9xCDo6HVZj+cINMdJ7buds9dtX76LrPwI+/sN9J3rp0t8WFBs0dY3S7JO5oNJ8cS8vnjTMChxXyh8dvhU0SDsiitIUoxgbkLG7hXi0EhuRKInEYeQ9y//UqR2FI7lQm0Tcr55cHtCqkgOT9DkSjyDHur7U9UlrfEvwQ8k6wQICjo/8RNPrEeu766n1DzjgA1hr0Qtoux4ZiFv88TrkYFMEZ88EqhoO15T963uotPrEFySA8ZO0NX5SvVfaezzyawXklk56Io3Fm7VlgqDUxdTDhCd+Sn+dd8UDXvbQQ03YQ1Wj6Sag1c3wxoyOxy5/C9Uxxa77GcP9P7GE5PbGJKyMAC2zc8Wi2ooIL4r/4eUP6/bDme7C0OPgYCoirylRkgSNsZ53ekowa8wKaOBmv1eU6ifQSlZxH4BAOyCGd5za7CzqfJZpeB+rblebhV8G/6FLFEySA0CJ6y21pek060VSeaHiJfxE1edxl9fcS2Q0JcBgCXrVDCLoSLWzySLQqF9Q7GLPi9kBmVspf8OvLTW+g20TtGnIEreWh6S30mOX0J5oPOQeo4inAtmP2kcONhToPruWyyERrMwXX7JeG+LzvFmDazl5T2F+Fw2GR/F50MYWMo+5xpN0iI2NuIKx+76HzwwooZd6ZyRY3wZJa7SF/IYG1zLzDWHxiNg=
+  skip_cleanup: true
+  file_glob: true
+  file: 
+    - super_prove-*.tar.gz
+  on:
+    repo: sterin/super-prove-build
+    tags: true

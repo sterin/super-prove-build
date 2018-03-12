@@ -1,0 +1,27 @@
+[submodule "abc"]
+	path = abc
+	url = https://github.com/berkeley-abc/abc.git
+[submodule "abc-zz"]
+	path = abc-zz
+	url = https://github.com/berkeley-abc/abc-zz.git
+[submodule "pyzz"]
+	path = pyzz
+	url = https://github.com/sterin/pyzz.git
+[submodule "pywrapper"]
+	path = pywrapper
+	url = https://github.com/sterin/pywrapper.git
+[submodule "cmake"]
+	path = cmake
+	url = https://github.com/sterin/pyabc-cmake.git
+[submodule "pyliveness"]
+	path = pyliveness
+	url = https://github.com/sterin/pyliveness.git
+[submodule "pyaig"]
+	path = pyaig
+	url = https://github.com/sterin/pyaig.git
+[submodule "pyabc"]
+	path = pyabc
+	url = https://github.com/sterin/_pyabc.git
+[submodule "super_prove"]
+	path = super_prove
+	url = https://github.com/berkeley-abc/super_prove.git
