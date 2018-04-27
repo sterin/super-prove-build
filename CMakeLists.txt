@@ -17,9 +17,10 @@ add_subdirectory(pyabc EXCLUDE_FROM_ALL)
 
 install_python_module(pyzz/pyzz)
 install_python_module(pyabc/pyabc)
-install_python_module(pyaig/src/pyaig)
+install_python_module(pyaig/pyaig)
 install_python_module(pyliveness)
 install_python_module(super_prove)
+install_python_requirements(requirements.txt)
 
 install_target(bip.exe DESTINATION bin RENAME bip)
 install_target(pyabc.exe DESTINATION bin RENAME abc.exe)

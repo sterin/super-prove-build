@@ -11,6 +11,7 @@ matrix:
           - zlib1g-dev
           - python-dev
           - python-setuptools
+          - python-pip
           - ninja-build
 
 script:
