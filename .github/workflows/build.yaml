@@ -29,7 +29,32 @@ jobs:
       run: |
         cmake --build build --target package
 
-    - uses: actions/upload-artifact@v2
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
       with:
         name: release
         path: build/super_prove-*-Release.tar.gz
+
+    - name: Create Release
+      if: startsWith(github.event.ref, 'refs/tags')
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      if: startsWith(github.event.ref, 'refs/tags')
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/super_prove-${{ github.ref }}-Ubuntu_18.04-Release.tar.gz
+        asset_name: super_prove-${{ github.ref }}-Ubuntu_18.04-Release.tar.gz
+        asset_content_type: application/tar+gzip
