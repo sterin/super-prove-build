@@ -1,0 +1,35 @@
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: install required pacakges
+      run: sudo apt install -y ninja-build libreadline-dev zlib1g-dev python-dev python-setuptools python-pip
+
+    - name: Configure CMake
+      run: |
+        mkdir build
+        cd build
+        cmake -G Ninja -D CMAKE_BUILD_TYPE=Release ..
+
+    - name: Build
+      run: |
+        cmake --build build
+
+    - name: Package
+      run: |
+        cmake --build build --target package
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: release
+        path: build/super_prove-*-Release.tar.gz
