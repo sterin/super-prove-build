@@ -13,7 +13,7 @@ jobs:
         submodules: recursive
 
     - name: install required pacakges
-      run: sudo apt install -y ninja-build libreadline-dev zlib1g-dev python-dev python-setuptools python-pip
+      run: sudo apt install -y ninja-build libreadline-dev zlib1g-dev python-dev python-setuptools python-pip python-wheel
 
     - name: Configure CMake
       run: |
