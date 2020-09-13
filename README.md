@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sterin/super-prove-build.svg?branch=master)](https://travis-ci.org/sterin/super-prove-build)
+![.github/workflows/build.yaml](https://github.com/sterin/super-prove-build/workflows/.github/workflows/build.yaml/badge.svg)
 
 This repository combines all the various tools and libraries needed for building super_prove.
 
